@@ -1,7 +1,0 @@
-{
-    "env": {
-      "CLAUDE_PLUGIN_ROOT": "D:\\dotori\\.claude\\skills\\harness\\vendors\\omc",
-      "OMC_PLUGIN_ROOT": "D:\\dotori\\.claude\\skills\\harness\\vendors\\omc",
-      "ECC_ROOT": "D:\\dotori\\.claude\\skills\\harness\\vendors\\ecc"
-    }
-  }
