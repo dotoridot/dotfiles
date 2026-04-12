@@ -1,0 +1,24 @@
+﻿{
+  "acorn_version": "0.0.0-dev",
+  "tools": {
+    "omc": {
+      "repo": "Yeachan-Heo/oh-my-claudecode",
+      "commit": "04655ee24207f367fee785b5eb33b21234d9e0e3",
+      "verified_at": "2026-04-13"
+    },
+    "gstack": {
+      "repo": "garrytan/gstack",
+      "commit": "c6e6a21d1a9a58e771403260ff6a134898f2dd02",
+      "verified_at": "2026-04-13"
+    },
+    "ecc": {
+      "repo": "affaan-m/everything-claude-code",
+      "commit": "125d5e619905d97b519a887d5bc7332dcc448a52",
+      "verified_at": "2026-04-13"
+    }
+  },
+  "guard": {
+    "mode": "block",
+    "patterns": "strict"
+  }
+}
