@@ -1,5 +1,7 @@
 # grill-me
 
+[한국어](README.ko.md)
+
 A Claude Code skill that interviews you relentlessly about a plan or design — one question at a time — until every branch of the decision tree is resolved.
 
 ## Why this exists
