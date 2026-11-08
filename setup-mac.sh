@@ -11,8 +11,8 @@ echo "📦 레포 클론 중..."
 mkdir -p ~/dotoricode
 cd ~/dotoricode
 
-[ -d "acorn" ] || git clone https://github.com/dotoricode/acorn
-[ -d "dotfiles" ] || git clone https://github.com/dotoricode/dotfiles
+[ -d "acorn" ] || git clone https://github.com/dotoridot/acorn
+[ -d "dotfiles" ] || git clone https://github.com/dotoridot/dotfiles
 
 # 2. ~/.claude 디렉토리 준비
 echo "📁 .claude 디렉토리 준비 중..."
@@ -24,27 +24,27 @@ if [ -L ~/.claude/skills/harness ]; then
     echo "   이미 연결됨, 스킵"
 elif [ -d ~/.claude/skills/harness ]; then
     mv ~/.claude/skills/harness ~/.claude/skills/harness-backup
-    ln -s ~/dotoricode/dotfiles/claude/harness ~/.claude/skills/harness
+    ln -s ~/dotoridot/dotfiles/claude/harness ~/.claude/skills/harness
 else
-    ln -s ~/dotoricode/dotfiles/claude/harness ~/.claude/skills/harness
+    ln -s ~/dotoridot/dotfiles/claude/harness ~/.claude/skills/harness
 fi
 
 # 4. vendors 디렉토리 생성 (gitignore 대상)
 echo "📂 vendors 디렉토리 생성 중..."
-mkdir -p ~/dotoricode/dotfiles/claude/harness/vendors/gstack
-mkdir -p ~/dotoricode/dotfiles/claude/harness/vendors/omc
-mkdir -p ~/dotoricode/dotfiles/claude/harness/vendors/ecc
-mkdir -p ~/dotoricode/dotfiles/claude/harness/backup
+mkdir -p ~/dotoridot/dotfiles/claude/harness/vendors/gstack
+mkdir -p ~/dotoridot/dotfiles/claude/harness/vendors/omc
+mkdir -p ~/dotoridot/dotfiles/claude/harness/vendors/ecc
+mkdir -p ~/dotoridot/dotfiles/claude/harness/backup
 
 # 5. harness.lock에서 SHA 읽어서 gstack clone
 echo "📥 gstack 설치 중..."
-GSTACK_SHA=$(cat ~/dotoricode/dotfiles/claude/harness/harness.lock | python3 -c "import sys,json; print(json.load(sys.stdin)['tools']['gstack']['commit'])")
+GSTACK_SHA=$(cat ~/dotoridot/dotfiles/claude/harness/harness.lock | python3 -c "import sys,json; print(json.load(sys.stdin)['tools']['gstack']['commit'])")
 
-if [ -z "$(ls -A ~/dotoricode/dotfiles/claude/harness/vendors/gstack)" ]; then
+if [ -z "$(ls -A ~/dotoridot/dotfiles/claude/harness/vendors/gstack)" ]; then
     git clone https://github.com/garrytan/gstack /tmp/gstack-tmp
     cd /tmp/gstack-tmp
     git checkout $GSTACK_SHA
-    cp -r /tmp/gstack-tmp/. ~/dotoricode/dotfiles/claude/harness/vendors/gstack/
+    cp -r /tmp/gstack-tmp/. ~/dotoridot/dotfiles/claude/harness/vendors/gstack/
     rm -rf /tmp/gstack-tmp
     echo "   gstack @ $GSTACK_SHA 설치 완료"
 else
@@ -56,7 +56,7 @@ echo "🔗 gstack 심링크 연결 중..."
 if [ -L ~/.claude/skills/gstack ]; then
     echo "   이미 연결됨, 스킵"
 else
-    ln -s ~/dotoricode/dotfiles/claude/harness/vendors/gstack ~/.claude/skills/gstack
+    ln -s ~/dotoridot/dotfiles/claude/harness/vendors/gstack ~/.claude/skills/gstack
 fi
 
 # 7. settings.json 심링크 연결
@@ -64,11 +64,11 @@ echo "⚙️  settings.json 연결 중..."
 if [ -f ~/.claude/settings.json ]; then
     mv ~/.claude/settings.json ~/.claude/settings.json.backup
 fi
-ln -sf ~/dotoricode/dotfiles/claude/settings.json ~/.claude/settings.json
+ln -sf ~/dotoridot/dotfiles/claude/settings.json ~/.claude/settings.json
 
 # 8. acorn Node.js 의존성 설치
 echo "📦 acorn 의존성 설치 중..."
-cd ~/dotoricode/acorn
+cd ~/dotoridot/acorn
 npm install
 
 echo ""

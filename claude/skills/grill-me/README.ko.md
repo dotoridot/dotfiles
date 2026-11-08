@@ -43,8 +43,8 @@
 
 ## 관련 스킬
 
-- [`prompt-grill`](https://github.com/dotoricode/prompt-grill) — 이 인터뷰 패턴을 빌려, 흐릿한 작업 요청을 5슬롯 XML 프롬프트로 다듬습니다.
-- [`cerberus`](https://github.com/dotoricode/cerberus) — grill-me를 헤드 2(계획 검증)로 사용하는 3단계 검증 워크플로우.
+- [`prompt-grill`](https://github.com/dotoridot/prompt-grill) — 이 인터뷰 패턴을 빌려, 흐릿한 작업 요청을 5슬롯 XML 프롬프트로 다듬습니다.
+- [`cerberus`](https://github.com/dotoridot/cerberus) — grill-me를 헤드 2(계획 검증)로 사용하는 3단계 검증 워크플로우.
 
 ## 라이선스
 

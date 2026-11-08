@@ -43,8 +43,8 @@ Then run `/skills` inside Claude Code. `grill-me` should appear in the list.
 
 ## Related
 
-- [`prompt-grill`](https://github.com/dotoricode/prompt-grill) — borrows this interview pattern to sharpen vague work requests into 5-slot XML prompts before execution.
-- [`cerberus`](https://github.com/dotoricode/cerberus) — uses grill-me as head 2 (plan interrogation) in a 3-gate verification workflow.
+- [`prompt-grill`](https://github.com/dotoridot/prompt-grill) — borrows this interview pattern to sharpen vague work requests into 5-slot XML prompts before execution.
+- [`cerberus`](https://github.com/dotoridot/cerberus) — uses grill-me as head 2 (plan interrogation) in a 3-gate verification workflow.
 
 ## License
 
